@@ -17,20 +17,32 @@ Jeweler::Tasks.new do |gem|
   gem.name = "gator-as3"
   gem.homepage = "http://github.com/devboy/gator-as3"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{gator-as3 - ActionScript3 & MXML generators for gator}
+  gem.description = %Q{gator-as3 - ActionScript3 & MXML generators for gator}
   gem.email = "dominic.graefen@gmail.com"
   gem.authors = ["devboy"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
 
-require 'rake/testtask'
-Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
+require 'rspec/core'
+require 'rspec/core/rake_task'
+require 'ci/reporter/rake/rspec'
+
+ENV["CI_REPORTS"] ||= File.expand_path( File.join( File.dirname(__FILE__), "test", "report" ) )
+RSpec::Core::RakeTask.new(:spec) do |spec|
+  spec.pattern = FileList['spec/**/*_spec.rb']
 end
+
+task :spec => "ci:setup:rspec"
+
+RSpec::Core::RakeTask.new(:rcov) do |spec|
+  spec.pattern = 'spec/**/*_spec.rb'
+  spec.rcov = true
+end
+
+task :test => :spec
+task :default => :spec
 
 require 'rcov/rcovtask'
 Rcov::RcovTask.new do |test|
@@ -39,8 +51,6 @@ Rcov::RcovTask.new do |test|
   test.verbose = true
   test.rcov_opts << '--exclude "gems/*"'
 end
-
-task :default => :test
 
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
