@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "gator-as3.gemspec",
     "lib/gator/as3.rb",
     "lib/gator/as3/collection.rb",
     "lib/gator/as3/klass.as.tt",
