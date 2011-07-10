@@ -23,7 +23,20 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "gator-as3.gemspec",
     "lib/gator/as3.rb",
+    "lib/gator/as3/generators.rb",
+    "lib/gator/as3/generators/collection.rb",
+    "lib/gator/as3/generators/klass.as.tt",
+    "lib/gator/as3/generators/klass.rb",
+    "lib/gator/as3/generators/test/asunit4.rb",
+    "lib/gator/as3/generators/test/asunit4/collection.rb",
+    "lib/gator/as3/generators/test/asunit4/klass.as.tt",
+    "lib/gator/as3/generators/test/asunit4/klass.rb",
+    "lib/gator/as3/generators/test/flexunit4.rb",
+    "lib/gator/as3/generators/test/flexunit4/collection.rb",
+    "lib/gator/as3/generators/test/flexunit4/klass.as.tt",
+    "lib/gator/as3/generators/test/flexunit4/klass.rb",
     "spec/spec_helper.rb"
   ]
   s.homepage = %q{http://github.com/devboy/gator-as3}
