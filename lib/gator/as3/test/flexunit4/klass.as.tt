@@ -1,0 +1,12 @@
+package <%= package_name %>
+{
+
+    public class <%= class_name %>
+    {
+        [Test]
+        public function testSomething():void
+        {
+        }
+
+    }
+}
