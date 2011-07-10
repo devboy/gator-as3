@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{gator-as3}
-  s.version = "0.0.4.pre"
+  s.version = "0.0.5.pre"
 
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dominic Graefen"]
@@ -23,7 +23,20 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "gator-as3.gemspec",
     "lib/gator/as3.rb",
+    "lib/gator/as3/generators.rb",
+    "lib/gator/as3/generators/collection.rb",
+    "lib/gator/as3/generators/klass.as.tt",
+    "lib/gator/as3/generators/klass.rb",
+    "lib/gator/as3/generators/test/asunit4.rb",
+    "lib/gator/as3/generators/test/asunit4/collection.rb",
+    "lib/gator/as3/generators/test/asunit4/klass.as.tt",
+    "lib/gator/as3/generators/test/asunit4/klass.rb",
+    "lib/gator/as3/generators/test/flexunit4.rb",
+    "lib/gator/as3/generators/test/flexunit4/collection.rb",
+    "lib/gator/as3/generators/test/flexunit4/klass.as.tt",
+    "lib/gator/as3/generators/test/flexunit4/klass.rb",
     "spec/spec_helper.rb"
   ]
   s.homepage = %q{http://github.com/devboy/gator-as3}
