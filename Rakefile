@@ -20,7 +20,7 @@ Jeweler::Tasks.new do |gem|
   gem.summary = %Q{gator-as3 - ActionScript3 & MXML generators for gator}
   gem.description = %Q{gator-as3 - ActionScript3 & MXML generators for gator}
   gem.email = "dominic.graefen@gmail.com"
-  gem.authors = ["devboy"]
+  gem.authors = ["Dominic Graefen"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
@@ -44,13 +44,13 @@ end
 task :test => :spec
 task :default => :spec
 
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-  test.rcov_opts << '--exclude "gems/*"'
-end
+#require 'rcov/rcovtask'
+#Rcov::RcovTask.new do |test|
+#  test.libs << 'test'
+#  test.pattern = 'test/**/test_*.rb'
+#  test.verbose = true
+#  test.rcov_opts << '--exclude "gems/*"'
+#end
 
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
