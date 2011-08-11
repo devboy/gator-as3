@@ -44,15 +44,7 @@ end
 task :test => :spec
 task :default => :spec
 
-#require 'rcov/rcovtask'
-#Rcov::RcovTask.new do |test|
-#  test.libs << 'test'
-#  test.pattern = 'test/**/test_*.rb'
-#  test.verbose = true
-#  test.rcov_opts << '--exclude "gems/*"'
-#end
-
-require 'rake/rdoctask'
+require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
