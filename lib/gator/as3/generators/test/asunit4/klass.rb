@@ -26,7 +26,7 @@ module Gator
 
         def generate_implementation
           return unless options[:impl]
-          invoke parent.parent.get_subcommand("klass")
+          invoke resolve_subcommand(["as3","klass"])
         end
 
         no_tasks {
