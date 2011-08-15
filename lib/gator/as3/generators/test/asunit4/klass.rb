@@ -38,6 +38,10 @@ module Gator
           def class_name
             @class_name
           end
+          
+          def instance_name
+            @class_name.chomp("Test")
+          end
 
         }
 
