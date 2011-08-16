@@ -2,15 +2,11 @@ module Gator
   module AS3
     module FlexUnit4
 
-      class ClassTestGenerator < Task
+      class ClassTestGenerator < Gator::AS3::AS3TestFileGenerator
         include Gator::Project
 
         define :command => "klass",
-              :usage => "generate as3 test klass CLASS_NAME", :description => "Creates ASUnit4 class test."
-
-        argument :classname
-
-        class_option :impl, :default => false
+              :usage => "generate as3 test klass CLASS_NAME", :description => "Creates FlexUnit4 class test."
 
         def self.source_root
           File.dirname __FILE__
@@ -18,37 +14,18 @@ module Gator
 
         def generate
           src = project.path(:source, :test, :as3)
-          @package_name, @class_name = split_class_name(classname)
-          @class_name += "Test"
-          src = File.join(src, @package_name.split(".").join(File::SEPARATOR)) unless @package_name == ""
-          template "klass.as.tt", File.join(src, "#{@class_name}.as")
-        end
-
-        def generate_implementation
-          return unless options[:impl]
-          invoke parent.parent.resolve_subcommand(["as3","klass"])
+          class_name = "#{class_name()}Test"
+          src = File.join(src, package_name.split(".").join(File::SEPARATOR)) unless package_name == ""
+          template "klass.as.tt", File.join(src, "#{class_name}.as")
         end
 
         no_tasks {
 
-          def package_name
-            @package_name
-          end
-
-          def class_name
-            @class_name
+          def instance_name
+            class_name.chomp("Test")
           end
 
         }
-
-        protected
-
-        def split_class_name(class_name)
-          pieces = class_name.split "."
-          class_name = pieces.pop
-          package_name = pieces.join "."
-          return package_name, class_name
-        end
 
       end
 
