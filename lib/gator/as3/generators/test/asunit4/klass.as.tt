@@ -1,12 +1,33 @@
 package <%= package_name %>
 {
+	import asunit.asserts.*;
 
     public class <%= class_name %>
     {
-        [Test]
-        public function testSomething():void
-        {
-        }
+		private var instance:<%= instance_name %>;
 
+		[Before]
+		public function setUp():void
+		{
+		    instance=new <%= instance_name %>();
+		}
+
+		[After]
+		public function tearDown():void
+		{
+		    instance=null;
+		}
+
+		[Test]
+		public function should_be_instantiated():void
+		{
+		    assertTrue(instance is <%= instance_name %>);
+		}
+		
+		[Test]
+		public function should_fail():void
+		{
+		    assertTrue(false);
+		}
     }
 }
