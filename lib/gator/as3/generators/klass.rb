@@ -1,6 +1,6 @@
 module Gator
   module AS3
-    class ClassGenerator < AS3ClassFileGenerator
+    class ClassGenerator < KlassGenerator
       include Gator::Project
 
       define :command => "klass",

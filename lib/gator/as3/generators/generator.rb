@@ -1,6 +1,7 @@
 module Gator
   module AS3
     class GeneratorBase < Gator::Task
+
       argument :package_and_class
 
       no_tasks {
@@ -26,7 +27,7 @@ module Gator
       protected
 
       def definition
-        self.definition
+        self.class.definition
       end
 
       def split_package_and_class(class_name)
@@ -43,7 +44,17 @@ module Gator
 
       def generate_test
         return unless options[:test]
-        invoke resolve_subcommand(["test", definition[:command]],["as3","test","klass"])
+        invoke resolve_subcommand(test_command,test_command_fallback)
+      end
+
+      protected
+
+      def test_command
+        ["test", definition[:command]]
+      end
+
+      def test_command_fallback
+        ["as3","test","klass"]
       end
     end
 
@@ -52,7 +63,16 @@ module Gator
 
       def generate_klass
         return unless options[:klass]
-        invoke resolve_subcommand(["as3", definition[:command]],["as3","klass"])
+        p resolve_subcommand(klass_command,klass_command_fallback)
+        invoke resolve_subcommand(klass_command,klass_command_fallback)
+      end
+
+      def klass_command
+        ["as3", definition[:command]]
+      end
+
+      def klass_command_fallback
+        ["as3","klass"]
       end
     end
   end

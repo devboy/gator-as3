@@ -2,7 +2,7 @@ module Gator
   module AS3
     module ASUnit4
 
-      class ClassTestGenerator < Gator::AS3::AS3TestFileGenerator
+      class ClassTestGenerator < Gator::AS3::TestGenerator
         include Gator::Project
 
         define :command => "klass",
@@ -15,8 +15,8 @@ module Gator
         def generate
           src = project.path(:source, :test, :as3)
           class_name = "#{class_name()}Test"
-          src = File.join(src, package_name.split(".").join(File::SEPARATOR)) unless package_name == ""
-          template "klass.as.tt", File.join(src, "#{class_name}.as")
+          src = File.join(src, package_name.split(".").join(File::SEPARATOR)) unless package_name() == ""
+          template "klass.as.tt", File.join(src, "#{class_name()}.as")
         end
 
         no_tasks {
