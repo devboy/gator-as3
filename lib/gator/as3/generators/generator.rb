@@ -66,7 +66,7 @@ module Gator
       protected
 
       def source
-        project.path(:source, :test, :as3)
+        Gator::Project.project.path(:source, :test, :as3)
       end
 
       def generate_klass_command
