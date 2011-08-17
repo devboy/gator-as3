@@ -1,14 +1,17 @@
 module Gator
   module AS3
-    class GeneratorBase < Gator::Task
+    class AS3Generator < Gator::Generator
+      include Gator::ActAsTemplateGenerator
 
       argument :package_and_class
-
       attr_accessor :package_name, :class_name
 
+      def self.template_root
+        File.dirname(__FILE__) + "/../templates"
+      end
+
       def init
-        source_paths.unshift File.dirname(__FILE__) + '/../templates'
-        @package_name, @class_name = split_package_and_class(package_and_class)
+        @package_name, @class_name = AS3Util.split_package_and_class(package_and_class)
       end
 
       def generate
@@ -25,21 +28,9 @@ module Gator
         File.join(source, AS3Util.package_to_dir(@package_name), "#{@class_name}.as")
       end
 
-      def definition
-        self.class.definition
-      end
-
-      def split_package_and_class(class_name)
-        pieces = class_name.split "."
-        class_name = pieces.pop
-        package_name = pieces.join "."
-        return package_name, class_name
-      end
-
     end
 
-    class KlassGenerator < GeneratorBase
-      include Gator::Project
+    class KlassGenerator < AS3Generator
 
       class_option :test, :default => false
 
@@ -63,8 +54,7 @@ module Gator
       end
     end
 
-    class TestGenerator < GeneratorBase
-      include Gator::Project
+    class TestGenerator < AS3Generator
 
       class_option :klass, :default => false
 
