@@ -12,11 +12,13 @@ module Gator
           File.dirname __FILE__
         end
 
+        def template_file
+          "klass.as.tt"
+        end
+
         def generate
           @class_name = "#{@class_name}Test"
-          src = project.path(:source, :test, :as3)
-          src = File.join(src, @package_name.split(".").join(File::SEPARATOR)) unless @package_name == ""
-          template "klass.as.tt", File.join(src, "#{@class_name}.as")
+          super
         end
 
         no_tasks {
