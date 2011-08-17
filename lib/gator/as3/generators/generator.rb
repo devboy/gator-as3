@@ -22,7 +22,7 @@ module Gator
       end
 
       def target
-        File.join(source, package_to_dir, "#{@class_name}.as")
+        File.join(source, AS3Util.package_to_dir(@package_name), "#{@class_name}.as")
       end
 
       def definition
@@ -34,10 +34,6 @@ module Gator
         class_name = pieces.pop
         package_name = pieces.join "."
         return package_name, class_name
-      end
-
-      def package_to_dir
-        @package_name.split(".").join(File::SEPARATOR)
       end
 
     end
