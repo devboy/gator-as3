@@ -7,6 +7,7 @@ module Gator
       attr_accessor :package_name, :class_name
 
       def init
+        source_paths.unshift File.dirname(__FILE__) + '/../templates'
         @package_name, @class_name = split_package_and_class(package_and_class)
       end
 

@@ -8,12 +8,8 @@ module Gator
         define :command => "klass",
                :usage => "generate as3 test klass CLASS_NAME", :description => "Creates ASUnit4 class test."
 
-        def self.source_root
-          File.dirname __FILE__
-        end
-
         def template_file
-          "klass.as.tt"
+          "as3/test/asunit4/klass.as.tt"
         end
 
         def generate
@@ -24,7 +20,7 @@ module Gator
         no_tasks {
 
           def instance_name
-            class_name.chomp("Test")
+            @class_name.chomp("Test")
           end
 
         }

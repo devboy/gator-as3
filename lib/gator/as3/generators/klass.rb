@@ -6,12 +6,8 @@ module Gator
       define :command => "klass",
              :usage => "generate as3 klass CLASS_NAME", :description => "Creates AS3 class."
 
-      def self.source_root
-        File.dirname __FILE__
-      end
-
       def template_file
-        "klass.as.tt"
+        "as3/klass.as.tt"
       end
 
     end
