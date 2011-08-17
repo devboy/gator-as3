@@ -4,25 +4,11 @@ module Gator
 
       argument :package_and_class
 
-      no_tasks {
+      attr_accessor :package_name, :class_name
 
-        def package_name
-          @package_name ||= split_package_and_class(package_and_class)[0]
-        end
-
-        def package_name=(name)
-          @package_name = name
-        end
-
-        def class_name
-          @class_name ||= split_package_and_class(package_and_class)[1]
-        end
-
-        def class_name=(name)
-          @class_name=name
-        end
-
-      }
+      def init
+        @package_name, @class_name = split_package_and_class(package_and_class)
+      end
 
       protected
 
@@ -44,16 +30,16 @@ module Gator
 
       def generate_test
         return unless options[:test]
-        invoke resolve_subcommand(test_command,test_command_fallback)
+        invoke resolve_subcommand(generate_test_command,generate_test_command_fallback)
       end
 
       protected
 
-      def test_command
+      def generate_test_command
         ["test", definition[:command]]
       end
 
-      def test_command_fallback
+      def generate_test_command_fallback
         ["as3","test","klass"]
       end
     end
@@ -63,15 +49,16 @@ module Gator
 
       def generate_klass
         return unless options[:klass]
-        p resolve_subcommand(klass_command,klass_command_fallback)
-        invoke resolve_subcommand(klass_command,klass_command_fallback)
+        invoke resolve_subcommand(generate_klass_command,generate_klass_command_fallback)
       end
 
-      def klass_command
+      protected
+
+      def generate_klass_command
         ["as3", definition[:command]]
       end
 
-      def klass_command_fallback
+      def generate_klass_command_fallback
         ["as3","klass"]
       end
     end
