@@ -3,11 +3,11 @@ package
     import asunit.core.TextCore;
     import flash.display.MovieClip;
 
-    public class <%= test_runner_name %> extends MovieClip 
+    public class <%= class_name %> extends MovieClip 
 	{
         protected var core:TextCore;
 
-        public function <%= test_runner_name %>() 
+        public function <%= class_name %>() 
 		{
             core = new TextCore();
             core.start(AllTests, null, this);
