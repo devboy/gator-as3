@@ -8,6 +8,8 @@ module Gator
         define :command => "suite",
                :usage => "generate as3 asunit4 test suite CLASS_NAME", :description => "Creates ASUnit4 suite."
 
+        class_option :force, :default => true
+
         def source
           project.path(:source, :test, :as3)
         end

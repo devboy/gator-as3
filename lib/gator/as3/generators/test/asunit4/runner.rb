@@ -8,6 +8,8 @@ module Gator
         define :command => "runner",
                :usage => "generate as3 asunit4 test runner CLASS_NAME", :description => "Creates ASUnit4 runner."
 
+        class_option :force, :default => true
+
         def source
           project.path(:source, :test, :as3)
         end
