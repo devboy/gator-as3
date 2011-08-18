@@ -3,6 +3,15 @@ package
     [Suite]
     public class AllTests 
 	{
-		//
+        <% all_tests.each do |test| %>
+        <%= "import #{test[:package_name]}.#{test[:class_name]}" %>
+        <% end %>
+
+		public function AllTest()
+        {
+            <% all_tests.each do |test| %>
+            <%= "addTest( new #{test[:class_name]}());" %>
+            <% end %>
+        }
     }
 }
