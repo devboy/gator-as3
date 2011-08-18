@@ -10,7 +10,11 @@ package
 		public function AllTests()
         {
             <% all_tests.each do |test| %>
-            <%= "addTest( new #{test[:class_name]}());" %>
+            <%= "var #{test[:class_name].gsub(/::/, '/').
+			    gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
+			    gsub(/([a-z\d])([A-Z])/,'\1_\2').
+			    tr("-", "_").
+			    downcase}_#{all_tests.length}:#{test[:class_name]};" %>
             <% end %>
         }
     }
