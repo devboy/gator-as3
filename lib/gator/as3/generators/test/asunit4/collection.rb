@@ -1,5 +1,6 @@
 require File.dirname(__FILE__) + '/klass'
 require File.dirname(__FILE__) + '/suite'
+require File.dirname(__FILE__) + '/runner'
 
 module Gator
   module AS3
@@ -12,6 +13,7 @@ module Gator
 
         register_subcommand ClassTestGenerator
         register_subcommand SuiteGenerator
+        register_subcommand RunnerGenerator
 
       end
     end
