@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/group'
+require File.dirname(__FILE__) + '/component'
 
 module Gator
   module MXML
@@ -8,7 +8,7 @@ module Gator
       define :command => "mxml",
              :usage => "generate mxml GENERATOR", :description => "Generators for MXML."
 
-      register_subcommand Gator::MXML::GroupGenerator
+      register_subcommand Gator::MXML::ComponentGenerator
 
     end
 
