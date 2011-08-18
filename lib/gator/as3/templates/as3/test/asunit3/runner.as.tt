@@ -1,0 +1,13 @@
+package 
+{
+    import asunit.textui.TestRunner;
+
+    public class <%= class_name %> extends TestRunner 
+	{
+        public function <%= class_name %>() 
+		{
+            start(AllTests, null, TestRunner.SHOW_TRACE);
+        }
+    }
+}
+
