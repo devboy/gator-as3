@@ -1,0 +1,37 @@
+package <%= package_name %> {
+
+	import asunit.framework.TestCase;
+
+	public class <%= class_name  %> extends TestCase 
+	{
+		private var instance:<%= instance_name %>;
+
+		public function <%= class_name %>(methodName:String=null) 
+		{
+			super(methodName)
+		}
+
+		override protected function setUp():void 
+		{
+			super.setUp();
+			instance = new <%= instance_name %>();
+		}
+
+		override protected function tearDown():void 
+		{
+			super.tearDown();
+			instance = null;
+		}
+
+		public function testInstantiated():void 
+		{
+			assertTrue("instance is <%= instance_name %>",instance is <%= instance_name %>);
+		}
+
+		public function testFailure():void 
+		{
+			assertTrue("Failing test", false);
+		}
+		
+	}
+}
