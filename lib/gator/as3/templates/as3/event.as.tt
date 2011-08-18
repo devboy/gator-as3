@@ -1,0 +1,12 @@
+package <%= package_name %>
+{
+    import flash.events.Event;
+
+    public class <%= class_name %> extends Event
+    {
+        public function <%= class_name %>(type:String,bubbles:Boolean=false,cancelable:Boolean=false)
+        {
+            super(type, bubbles, cancelable)
+        }
+    }
+}

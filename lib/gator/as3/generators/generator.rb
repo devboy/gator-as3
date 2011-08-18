@@ -63,6 +63,20 @@ module Gator
         invoke resolve_subcommand(generate_klass_command, generate_klass_command_fallback)
       end
 
+      class_option :suite, :default => true
+
+      def update_suite
+        return unless options[:suite]
+        invoke resolve_subcommand(["test","suite"])
+      end
+
+      class_option :runner, :default => true
+
+      def update_runner
+        return unless options[:runner]
+        invoke resolve_subcommand(["test","runner"])
+      end
+
       protected
 
       def source
