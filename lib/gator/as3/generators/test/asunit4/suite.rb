@@ -18,7 +18,7 @@ module Gator
 
         def generate
           @package_name = ""
-          @class_name = "AllTestsSuite"
+          @class_name = "AllTests"
           super
         end
 

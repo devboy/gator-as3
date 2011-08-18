@@ -7,7 +7,7 @@ package
         <%= "import #{test[:package_name]}.#{test[:class_name]}" %>
         <% end %>
 
-		public function AllTest()
+		public function AllTests()
         {
             <% all_tests.each do |test| %>
             <%= "addTest( new #{test[:class_name]}());" %>
