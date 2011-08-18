@@ -8,7 +8,7 @@ module Gator
       define :command => "mxml",
              :usage => "generate mxml GENERATOR", :description => "Generators for MXML."
 
-      register_subcommand Gator::MXML::ClassGenerator
+      register_subcommand Gator::MXML::GroupGenerator
 
     end
 

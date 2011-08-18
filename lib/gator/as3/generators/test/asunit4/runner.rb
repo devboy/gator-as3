@@ -6,7 +6,7 @@ module Gator
         include Gator::Project
 
         define :command => "runner",
-               :usage => "generate as3 asunit4 test runner CLASS_NAME", :description => "Creates ASUnit4 runner."
+               :usage => "generate as3 test runner CLASS_NAME", :description => "Creates ASUnit4 runner."
 
         class_option :force, :default => true
 
