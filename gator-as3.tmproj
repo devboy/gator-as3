@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>currentDocument</key>
-	<string>lib/gator/as3/templates/as3/test/asunit4/klass.as.tt</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -20,29 +18,10 @@
 	<key>fileHierarchyDrawerWidth</key>
 	<integer>316</integer>
 	<key>metaData</key>
-	<dict>
-		<key>lib/gator/as3/templates/as3/test/asunit4/klass.as.tt</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-	</dict>
-	<key>openDocuments</key>
-	<array>
-		<string>lib/gator/as3/templates/as3/test/asunit4/klass.as.tt</string>
-	</array>
+	<dict/>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{10, 4}, {945, 751}}</string>
+	<string>{{10, 19}, {945, 751}}</string>
 </dict>
 </plist>
