@@ -10,19 +10,17 @@ class GatorProcess
   end
 end
 
-describe "gator" do
-  it "should run in a different thread" do
+describe Gator::AS3::ClassGenerator do
+  it "should create a template file" do
     gator = GatorProcess.new
 
     gator.should_receive(:fork) do |&block|
       block.call
-      Gator::Runner.resolve_subcommand("generate").should == Gator::GenerateCommand
+      require File.dirname(__FILE__) + "/../../lib/gator/as3/generators"
+      Gator::AS3::ClassGenerator.start("org.devboy.MyShinyClass".split(" "))
+      File.exist?(File.join(Gator::Project.project.path(:source,:main,:as3),"org/devboy/MyShinyClass.as")).should == true
     end
 
     gator.run
   end
-end
-
-describe Gator::AS3::ClassGenerator do
-  it "should have some tests"
 end
