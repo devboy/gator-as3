@@ -22,26 +22,16 @@ class GatorProcess
 
   def run_fork_only
     fork do
-      Dir.chdir @dir
     end
   end
 
   def run_with_default_mock
     fork do
-      Dir.chdir @dir
       require "gator"
       Gator::Util.stub!(:find_gator_project).and_return(@dir)
       Gator::Project.project=Gator::Project::ProjectBase.new
       Gator::Project.project.name = "gator-as3-testproject"
       Gator::Project.project.options[:authors] = ["devboy"]
-    end
-  end
-
-  def run_on_filesystem
-    fork do
-      Dir.chdir @dir
-      require "gator"
-      Gator::Util.initialize_files
     end
   end
 
