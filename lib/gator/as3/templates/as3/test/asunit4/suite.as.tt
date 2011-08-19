@@ -10,7 +10,7 @@ package
 		public function AllTests()
         {
             <% all_tests.each_with_index do |test, index| %>
-            <%= "var #{test[:class_name].gsub(/\B[A-Z]/, '_\&').downcase}_#{index}:#{test[:class_name]};" %>
+            <%= "var #{test[:class_name].gsub(/\B[A-Z]/, '_\&').downcase}_#{index}:#{test[:package_name]}.#{test[:class_name]};" %>
             <% end %>
         }
     }
