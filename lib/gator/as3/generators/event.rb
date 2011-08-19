@@ -7,7 +7,7 @@ module Gator
              :usage => "generate as3 event CLASS_NAME", :description => "Creates AS3 event."
 
       def template_file
-        "as3/klass.as.tt"
+        "as3/event.as.tt"
       end
 
     end
