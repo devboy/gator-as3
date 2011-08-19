@@ -10,7 +10,7 @@ package
 		public function AllTests()
         {
             <% all_tests.each do |test| %>
-            <%= "addTest( new #{test[:class_name]}());" %>
+            <%= "addTest( new #{test[:package_name]}.#{test[:class_name]}());" %>
             <% end %>
         }
     }
