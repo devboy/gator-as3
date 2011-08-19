@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/../../spec_helper'
 
-describe Gator::AS3::ClassGenerator do
+describe Gator::AS3::InterfaceGenerator do
 
   before(:each) do
     FileUtils.mkdir_p SANDBOX_LOCATION
@@ -15,7 +15,7 @@ describe Gator::AS3::ClassGenerator do
     gator.should_receive(:fork) do |&block|
       block.call
       require File.dirname(__FILE__) + "/../../../lib/gator/as3/generators"
-      Gator::AS3::ClassGenerator.start("org.devboy.MyShinyClass".split(" "))
+      Gator::AS3::InterfaceGenerator.start("org.devboy.MyShinyClass".split(" "))
       File.exist?(File.join(Gator::Project.project.path(:source, :main, :as3), "org/devboy/MyShinyClass.as")).should == true
     end
     gator.run_with_default_mock
@@ -26,11 +26,11 @@ describe Gator::AS3::ClassGenerator do
     gator.should_receive(:fork) do |&block|
       block.call
       require File.dirname(__FILE__) + "/../../../lib/gator/as3/generators"
-      generator = Gator::AS3::ClassGenerator.new("org.devboy.MyShinyClass".split(" "))
+      generator = Gator::AS3::InterfaceGenerator.new("org.devboy.MyShinyClass".split(" "))
       generator.invoke_all
       generator.package_name.should == "org.devboy"
       generator.class_name.should == "MyShinyClass"
-      generator.template_file.should == "as3/klass.as.tt"
+      generator.template_file.should == "as3/interface.as.tt"
 
     end
     gator.run_with_default_mock

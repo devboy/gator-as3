@@ -37,4 +37,4 @@ class GatorProcess
 
 end
 
-SANDBOX_LOCATION = File.dirname(__FILE__) + "/sandbox"
+SANDBOX_LOCATION = File.dirname(__FILE__) + "/sandbox/specs"
