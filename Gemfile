@@ -12,5 +12,5 @@ group :development do
   gem "ci_reporter", "~> 1.6.5"
   gem "bundler", "~> 1.0.0"
   gem "jeweler", "~> 1.6.2"
-  gem "rcov", ">= 0"
+  #gem "rcov", ">= 0"
 end
