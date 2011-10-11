@@ -1,14 +1,14 @@
 package 
 {
 	<% all_tests.each do |test| %>
-	<%= "import #{test[:package_name]}.#{test[:class_name]}" %>
+	<%= "#{test[:package_name]}.#{test[:class_name]};".sub(/(?<!\w)\./, "").insert(0, 'import ') %>
 	<% end %>
 
     [Suite]
     public class AllTests 
 	{
         <% all_tests.each_with_index do |test, index| %>
-        <%= "public var #{test[:class_name].gsub(/\B[A-Z]/, '_\&').downcase}_#{index}:#{test[:package_name]}.#{test[:class_name]};" %>
+        <%= "public var #{test[:class_name].gsub(/\B[A-Z]/, '_\&').downcase}_#{index}:#{test[:package_name]}.#{test[:class_name]};".sub(/(?<!\w)\./, "") %>
         <% end %>
     }
 }
