@@ -1,7 +1,6 @@
-module Gator
+class Gator
   module AS3
     class InterfaceGenerator < KlassGenerator
-      include Gator::Project
 
       define :command => "interface",
              :usage => "generate as3 interface CLASS_NAME", :description => "Creates AS3 class."

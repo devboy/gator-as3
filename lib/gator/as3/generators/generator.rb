@@ -1,4 +1,4 @@
-module Gator
+class Gator
   module AS3
     class AS3Generator < Gator::Generator
       include Gator::ActAsTemplateGenerator
@@ -42,7 +42,7 @@ module Gator
       protected
 
       def source
-        project.path(:source, :main, :as3)
+        Gator::Sandbox.gator.project.path(:source, :main, :as3)
       end
 
       def generate_test_command
@@ -80,7 +80,7 @@ module Gator
       protected
 
       def source
-        Gator::Project.project.path(:source, :test, :as3)
+        Gator::Sandbox.gator.project.path(:source, :test, :as3)
       end
 
       def generate_klass_command

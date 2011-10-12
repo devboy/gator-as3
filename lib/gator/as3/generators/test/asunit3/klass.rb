@@ -1,4 +1,4 @@
-module Gator
+class Gator
   module AS3
     module ASUnit3
 

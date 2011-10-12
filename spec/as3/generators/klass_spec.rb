@@ -12,7 +12,7 @@ describe Gator::AS3::ClassGenerator do
 
   it "should create a file in the correct location" do
     gator = GatorProcess.new SANDBOX_LOCATION
-    gator.should_receive(:fork) do |&block|
+    gator.should_receive(:fork) do |block|
       block.call
       require File.dirname(__FILE__) + "/../../../lib/gator/as3/generators"
       Gator::AS3::ClassGenerator.start("org.devboy.MyShinyClass".split(" "))
@@ -23,7 +23,7 @@ describe Gator::AS3::ClassGenerator do
 
   it "should have the correct values" do
     gator = GatorProcess.new SANDBOX_LOCATION
-    gator.should_receive(:fork) do |&block|
+    gator.should_receive(:fork) do |block|
       block.call
       require File.dirname(__FILE__) + "/../../../lib/gator/as3/generators"
       generator = Gator::AS3::ClassGenerator.new("org.devboy.MyShinyClass".split(" "))

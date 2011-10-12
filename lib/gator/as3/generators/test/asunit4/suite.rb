@@ -1,9 +1,8 @@
-module Gator
+class Gator
   module AS3
     module ASUnit4
 
       class SuiteGenerator < Gator::AS3::AS3Generator
-        include Gator::Project
 
         define :command => "suite",
                :usage => "generate as3 asunit4 test suite CLASS_NAME", :description => "Creates ASUnit4 suite."
@@ -11,7 +10,7 @@ module Gator
         class_option :force, :default => true
 
         def source
-          project.path(:source, :test, :as3)
+          Gator::Sandbox.gator.project.path(:source, :test, :as3)
         end
 
         def template_file

@@ -1,4 +1,4 @@
-module Gator
+class Gator
   module MXML
     class SkinGenerator < Gator::AS3::KlassGenerator
       include Gator::Project

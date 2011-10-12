@@ -2,7 +2,7 @@ require File.dirname(__FILE__) + '/klass'
 require File.dirname(__FILE__) + '/suite'
 require File.dirname(__FILE__) + '/runner'
 
-module Gator
+class Gator
   module AS3
     module ASUnit3
 
