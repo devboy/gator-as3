@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{gator-as3}
-  s.version = "0.0.7.pre"
+  s.name = "gator-as3"
+  s.version = "0.0.9.pre"
 
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dominic Graefen"]
-  s.date = %q{2011-08-17}
-  s.description = %q{gator-as3 - ActionScript3 & MXML generators for gator}
-  s.email = %q{dominic.graefen@gmail.com}
+  s.date = "2011-10-13"
+  s.description = "gator-as3 - ActionScript3 & MXML generators for gator"
+  s.email = "dominic.graefen@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -25,54 +25,98 @@ Gem::Specification.new do |s|
     "VERSION",
     "gator-as3.gemspec",
     "lib/gator/as3.rb",
-    "lib/gator/as3/generators.rb",
-    "lib/gator/as3/generators/collection.rb",
-    "lib/gator/as3/generators/generator.rb",
-    "lib/gator/as3/generators/klass.rb",
-    "lib/gator/as3/generators/test/asunit4.rb",
-    "lib/gator/as3/generators/test/asunit4/collection.rb",
-    "lib/gator/as3/generators/test/asunit4/klass.rb",
-    "lib/gator/as3/generators/test/flexunit4.rb",
-    "lib/gator/as3/generators/test/flexunit4/collection.rb",
-    "lib/gator/as3/generators/test/flexunit4/klass.rb",
+    "lib/gator/as3/as3_configuration.rb",
+    "lib/gator/as3/generators/as3/collection.rb",
+    "lib/gator/as3/generators/as3/event.rb",
+    "lib/gator/as3/generators/as3/generator.rb",
+    "lib/gator/as3/generators/as3/interface.rb",
+    "lib/gator/as3/generators/as3/klass.rb",
+    "lib/gator/as3/generators/as3/test/asunit3.rb",
+    "lib/gator/as3/generators/as3/test/asunit3/collection.rb",
+    "lib/gator/as3/generators/as3/test/asunit3/klass.rb",
+    "lib/gator/as3/generators/as3/test/asunit3/runner.rb",
+    "lib/gator/as3/generators/as3/test/asunit3/suite.rb",
+    "lib/gator/as3/generators/as3/test/asunit4.rb",
+    "lib/gator/as3/generators/as3/test/asunit4/collection.rb",
+    "lib/gator/as3/generators/as3/test/asunit4/klass.rb",
+    "lib/gator/as3/generators/as3/test/asunit4/runner.rb",
+    "lib/gator/as3/generators/as3/test/asunit4/suite.rb",
+    "lib/gator/as3/generators/as3/test/flexunit4.rb",
+    "lib/gator/as3/generators/as3/test/flexunit4/collection.rb",
+    "lib/gator/as3/generators/as3/test/flexunit4/klass.rb",
+    "lib/gator/as3/generators/mxml/application.rb",
+    "lib/gator/as3/generators/mxml/collection.rb",
+    "lib/gator/as3/generators/mxml/component.rb",
+    "lib/gator/as3/generators/mxml/generator.rb",
+    "lib/gator/as3/generators/mxml/skin.rb",
+    "lib/gator/as3/templates/as3/event.as.tt",
+    "lib/gator/as3/templates/as3/interface.as.tt",
     "lib/gator/as3/templates/as3/klass.as.tt",
+    "lib/gator/as3/templates/as3/test/asunit3/klass.as.tt",
+    "lib/gator/as3/templates/as3/test/asunit3/runner.as.tt",
+    "lib/gator/as3/templates/as3/test/asunit3/suite.as.tt",
     "lib/gator/as3/templates/as3/test/asunit4/klass.as.tt",
+    "lib/gator/as3/templates/as3/test/asunit4/runner.as.tt",
+    "lib/gator/as3/templates/as3/test/asunit4/suite.as.tt",
     "lib/gator/as3/templates/as3/test/flexunit4/klass.as.tt",
-    "spec/generators/collection_spec.rb",
-    "spec/generators/klass_spec.rb",
+    "lib/gator/as3/templates/mxml/application.mxml.tt",
+    "lib/gator/as3/templates/mxml/component.mxml.tt",
+    "lib/gator/as3/templates/mxml/skin.mxml.tt",
+    "lib/gator/mxml/generators.rb",
+    "lib/gator/utils/as3_util.rb",
+    "rake/jeweler.rb",
+    "rake/jeweler_prerelease_tasks.rb",
+    "rake/pre_release_gemspec.rb",
+    "rake/pre_release_to_git.rb",
+    "spec/as3/generators/collection_spec.rb",
+    "spec/as3/generators/event_spec.rb",
+    "spec/as3/generators/interface_spec.rb",
+    "spec/as3/generators/klass_spec.rb",
+    "spec/as3/generators/test/asunit3/klass_spec.rb",
+    "spec/as3/generators/test/asunit3/runner_spec.rb",
+    "spec/as3/generators/test/asunit3/suite_spec.rb",
+    "spec/as3/generators/test/asunit4/klass_spec.rb",
+    "spec/as3/generators/test/asunit4/runner_spec.rb",
+    "spec/as3/generators/test/asunit4/suite_spec.rb",
+    "spec/mxml/generators/application_spec.rb",
+    "spec/mxml/generators/component_spec.rb",
+    "spec/mxml/generators/skin_spec.rb",
     "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://github.com/devboy/gator-as3}
+  s.homepage = "http://github.com/devboy/gator-as3"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.6.2}
-  s.summary = %q{gator-as3 - ActionScript3 & MXML generators for gator}
+  s.rubygems_version = "1.8.10"
+  s.summary = "gator-as3 - ActionScript3 & MXML generators for gator"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<gator>, ["~> 0.0.20.pre"])
+      s.add_runtime_dependency(%q<gator>, ["= 0.0.23.pre"])
       s.add_development_dependency(%q<rspec>, ["~> 2.3.0"])
       s.add_development_dependency(%q<ci_reporter>, ["~> 1.6.5"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.2"])
-      s.add_development_dependency(%q<rcov>, [">= 0"])
+      s.add_development_dependency(%q<simplecov>, [">= 0"])
+      s.add_development_dependency(%q<simplecov-rcov>, [">= 0"])
     else
-      s.add_dependency(%q<gator>, ["~> 0.0.20.pre"])
+      s.add_dependency(%q<gator>, ["= 0.0.23.pre"])
       s.add_dependency(%q<rspec>, ["~> 2.3.0"])
       s.add_dependency(%q<ci_reporter>, ["~> 1.6.5"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.6.2"])
-      s.add_dependency(%q<rcov>, [">= 0"])
+      s.add_dependency(%q<simplecov>, [">= 0"])
+      s.add_dependency(%q<simplecov-rcov>, [">= 0"])
     end
   else
-    s.add_dependency(%q<gator>, ["~> 0.0.20.pre"])
+    s.add_dependency(%q<gator>, ["= 0.0.23.pre"])
     s.add_dependency(%q<rspec>, ["~> 2.3.0"])
     s.add_dependency(%q<ci_reporter>, ["~> 1.6.5"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.6.2"])
-    s.add_dependency(%q<rcov>, [">= 0"])
+    s.add_dependency(%q<simplecov>, [">= 0"])
+    s.add_dependency(%q<simplecov-rcov>, [">= 0"])
   end
 end
 
