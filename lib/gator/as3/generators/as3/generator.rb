@@ -36,7 +36,7 @@ class Gator
 
       def generate_test
         return unless options[:test]
-        invoke resolve_subcommand(generate_test_command, generate_test_command_fallback)
+        invoke resolve_subcommand( generate_test_command, generate_test_command_fallback )
       end
 
       protected
