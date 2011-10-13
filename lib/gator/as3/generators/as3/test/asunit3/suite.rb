@@ -9,7 +9,7 @@ class Gator
                :usage => "generate as3 asunit3 test suite CLASS_NAME", :description => "Creates ASUnit3 suite."
 
         def source
-          project.path(:source, :test, :as3)
+          Gator::Sandbox.gator.project.path(:source, :test, :as3)
         end
 
         def template_file

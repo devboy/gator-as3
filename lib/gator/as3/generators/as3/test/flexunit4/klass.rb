@@ -2,27 +2,25 @@ class Gator
   module AS3
     module FlexUnit4
 
-      class ClassTestGenerator < Gator::AS3::AS3TestFileGenerator
+      class ClassTestGenerator < Gator::AS3::TestGenerator
 
 
         define :command => "klass",
               :usage => "generate as3 test klass CLASS_NAME", :description => "Creates FlexUnit4 class test."
 
-        def self.source_root
-          File.dirname __FILE__
+        def template_file
+          "as3/test/flexunit4/klass.as.tt"
         end
 
         def generate
-          src = project.path(:source, :test, :as3)
-          class_name = "#{class_name()}Test"
-          src = File.join(src, package_name.split(".").join(File::SEPARATOR)) unless package_name == ""
-          template "klass.as.tt", File.join(src, "#{class_name}.as")
+          @class_name = "#{@class_name}Test"
+          super
         end
 
         no_tasks {
 
           def instance_name
-            class_name.chomp("Test")
+            @class_name.chomp("Test")
           end
 
         }
