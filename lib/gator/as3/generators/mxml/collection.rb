@@ -2,7 +2,7 @@ require File.dirname(__FILE__) + '/component'
 require File.dirname(__FILE__) + '/application'
 require File.dirname(__FILE__) + '/skin'
 
-module Gator
+class Gator
   module MXML
 
     class GeneratorCollection < Gator::Command

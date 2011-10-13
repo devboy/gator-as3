@@ -1,4 +1,4 @@
-module Gator
+class Gator
   module AS3
     class AS3Generator < Gator::Generator
       include Gator::ActAsTemplateGenerator
@@ -7,7 +7,7 @@ module Gator
       attr_accessor :package_name, :class_name
 
       def self.template_root
-        File.dirname(__FILE__) + "/../templates"
+        File.dirname(__FILE__) + "/../../templates"
       end
 
       def init
@@ -36,13 +36,13 @@ module Gator
 
       def generate_test
         return unless options[:test]
-        invoke resolve_subcommand(generate_test_command, generate_test_command_fallback)
+        invoke resolve_subcommand( generate_test_command, generate_test_command_fallback )
       end
 
       protected
 
       def source
-        project.path(:source, :main, :as3)
+        Gator::Sandbox.gator.project.path(:source, :main, :as3)
       end
 
       def generate_test_command
@@ -80,7 +80,7 @@ module Gator
       protected
 
       def source
-        Gator::Project.project.path(:source, :test, :as3)
+        Gator::Sandbox.gator.project.path(:source, :test, :as3)
       end
 
       def generate_klass_command

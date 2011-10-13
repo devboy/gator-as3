@@ -2,7 +2,7 @@ require File.dirname(__FILE__) + '/klass'
 require File.dirname(__FILE__) + '/event'
 require File.dirname(__FILE__) + '/interface'
 
-module Gator
+class Gator
   module AS3
 
     class GeneratorCollection < Gator::Command

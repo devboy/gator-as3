@@ -1,7 +1,6 @@
-module Gator
+class Gator
   module MXML
     class ComponentGenerator < Gator::AS3::KlassGenerator
-      include Gator::Project
       include WithMXMLTemplates
       include ActAsMXMLKlassGenerator
 

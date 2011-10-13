@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/klass'
 
-module Gator
+class Gator
   module AS3
     module FlexUnit4
 

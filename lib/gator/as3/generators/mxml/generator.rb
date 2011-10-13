@@ -1,4 +1,4 @@
-module Gator
+class Gator
   module MXML
     module WithMXMLTemplates
         def self.included(base)
