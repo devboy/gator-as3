@@ -25,6 +25,9 @@ Jeweler::Tasks.new do |gem|
 end
 Jeweler::RubygemsDotOrgTasks.new
 
+require File.dirname(__FILE__)+"/rake/jeweler_prerelease_tasks"
+Jeweler::PrereleaseTasks.new
+
 require 'rspec/core'
 require 'rspec/core/rake_task'
 require 'ci/reporter/rake/rspec'
