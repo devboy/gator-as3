@@ -3,7 +3,7 @@ class Gator
     module ASUnit3
 
       class SuiteGenerator < Gator::AS3::AS3Generator
-        include Gator::Project
+
 
         define :command => "suite",
                :usage => "generate as3 asunit3 test suite CLASS_NAME", :description => "Creates ASUnit3 suite."

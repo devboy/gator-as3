@@ -3,7 +3,7 @@ class Gator
     module ASUnit3
 
       class ClassTestGenerator < Gator::AS3::TestGenerator
-        include Gator::Project
+
 
         define :command => "klass",
                :usage => "generate as3 test klass CLASS_NAME", :description => "Creates ASUnit3 class test."

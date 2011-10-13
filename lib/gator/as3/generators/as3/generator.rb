@@ -7,7 +7,7 @@ class Gator
       attr_accessor :package_name, :class_name
 
       def self.template_root
-        File.dirname(__FILE__) + "/../templates"
+        File.dirname(__FILE__) + "/../../templates"
       end
 
       def init

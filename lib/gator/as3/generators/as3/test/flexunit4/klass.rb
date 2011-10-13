@@ -3,7 +3,7 @@ class Gator
     module FlexUnit4
 
       class ClassTestGenerator < Gator::AS3::AS3TestFileGenerator
-        include Gator::Project
+
 
         define :command => "klass",
               :usage => "generate as3 test klass CLASS_NAME", :description => "Creates FlexUnit4 class test."

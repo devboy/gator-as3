@@ -3,7 +3,7 @@ class Gator
     module ASUnit3
 
       class RunnerGenerator < Gator::AS3::AS3Generator
-        include Gator::Project
+
 
         define :command => "runner",
                :usage => "generate as3 asunit3 test runner CLASS_NAME", :description => "Creates ASUnit3 runner."
