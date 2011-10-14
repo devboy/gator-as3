@@ -69,7 +69,7 @@ class Gator
         return unless options[:suite]
         suite = resolve_subcommand(["test","suite"])
         say "No TestSuite generator found. Skipped.", :yellow unless suite
-        inkoke suite unless suite.nil?
+        invoke suite unless suite.nil?
       end
 
       class_option :runner, :default => true
@@ -78,7 +78,7 @@ class Gator
         return unless options[:runner]
         runner = resolve_subcommand(["test","runner"])
         say "No TestRunner generator found. Skipped.", :yellow unless runner
-        inkoke runner unless runner.nil?
+        invoke runner unless runner.nil?
       end
 
       protected
