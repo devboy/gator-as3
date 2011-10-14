@@ -1,6 +1,19 @@
 class Gator
   class AS3Configuration < Gator::Configuration
 
+    def option_default option, default
+      case option
+        when :test
+          Gator::AS3::KlassGenerator.class_option :test, :default => default
+        when :klass
+          Gator::AS3::TestGenerator.class_option :klass, :default => default
+        when :runner
+          Gator::AS3::TestGenerator.class_option :runner, :default => default
+        when :suite
+          Gator::AS3::TestGenerator.class_option :suite, :default => default
+      end
+    end
+
     def use *generators
       require File.dirname(__FILE__) + '/../../gator/utils/as3_util'
       generators.each do |generator|
