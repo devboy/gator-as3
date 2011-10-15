@@ -1,4 +1,3 @@
-require File.dirname(__FILE__) + '/generator'
 class Gator
   module AS3
     class ClassGenerator < KlassGenerator

@@ -8,8 +8,6 @@ unless defined?(SpecHelpers)
   SimpleCov.coverage_dir(File.join("test", "coverage"))
   SimpleCov.start
 
-  require File.dirname(__FILE__)+'/../lib/gator/as3'
-
   RSpec.configure do |config|
   end
 
@@ -17,21 +15,23 @@ unless defined?(SpecHelpers)
 
   class GatorProcess
 
-    def initialize(dir)
-      @dir = dir
-    end
-
-    def run_fork_only
-      fork do
-      end
-    end
-
-    def run_with_default_mock
-      fork do
-        require "gator"
-      end
-    end
-
+  def initialize(dir)
+    @dir = dir
   end
+
+  def run_fork_only
+    fork do
+    end
+  end
+
+  def run_with_default_mock
+    fork do
+      require "gator"
+      require File.dirname(__FILE__) + '/../lib/gator/as3'
+      Gator::Application.start
+    end
+  end
+
+end
 
 end
