@@ -13,6 +13,11 @@ unless defined?(SpecHelpers)
 
   SANDBOX_LOCATION = File.dirname(__FILE__) + "/sandbox/specs"
 
+  require 'gator'
+  Gator::Application.start ["generate","as3"]
+  require File.dirname(__FILE__) + '/../lib/gator/as3'
+  Gator::Sandbox.gator.as3.use :as3, :mxml, :asunit3, :asunit4, :flexunit4
+
   class GatorProcess
 
   def initialize(dir)
