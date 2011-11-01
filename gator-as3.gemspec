@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "gator-as3"
-  s.version = "0.0.12.pre"
+  s.version = "0.0.13.pre"
 
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dominic Graefen"]
-  s.date = "2011-10-14"
+  s.date = "2011-11-01"
   s.description = "gator-as3 - ActionScript3 & MXML generators for gator"
   s.email = "dominic.graefen@gmail.com"
   s.extra_rdoc_files = [
@@ -62,38 +62,25 @@ Gem::Specification.new do |s|
     "lib/gator/as3/templates/mxml/application.mxml.tt",
     "lib/gator/as3/templates/mxml/component.mxml.tt",
     "lib/gator/as3/templates/mxml/skin.mxml.tt",
-    "lib/gator/mxml/generators.rb",
     "lib/gator/utils/as3_util.rb",
     "rake/jeweler.rb",
     "rake/jeweler_prerelease_tasks.rb",
     "rake/pre_release_gemspec.rb",
     "rake/pre_release_to_git.rb",
-    "spec/as3/generators/collection_spec.rb",
-    "spec/as3/generators/event_spec.rb",
-    "spec/as3/generators/interface_spec.rb",
-    "spec/as3/generators/klass_spec.rb",
-    "spec/as3/generators/test/asunit3/klass_spec.rb",
-    "spec/as3/generators/test/asunit3/runner_spec.rb",
-    "spec/as3/generators/test/asunit3/suite_spec.rb",
-    "spec/as3/generators/test/asunit4/klass_spec.rb",
-    "spec/as3/generators/test/asunit4/runner_spec.rb",
-    "spec/as3/generators/test/asunit4/suite_spec.rb",
-    "spec/mxml/generators/application_spec.rb",
-    "spec/mxml/generators/component_spec.rb",
-    "spec/mxml/generators/skin_spec.rb",
+    "spec/as3/generators/as3/klass_spec.rb",
     "spec/spec_helper.rb"
   ]
   s.homepage = "http://github.com/devboy/gator-as3"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.10"
+  s.rubygems_version = "1.8.11"
   s.summary = "gator-as3 - ActionScript3 & MXML generators for gator"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<gator>, ["= 0.0.23.pre"])
+      s.add_runtime_dependency(%q<gator>, ["= 0.0.25.pre"])
       s.add_development_dependency(%q<rspec>, ["~> 2.3.0"])
       s.add_development_dependency(%q<ci_reporter>, ["~> 1.6.5"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
@@ -101,7 +88,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<simplecov>, [">= 0"])
       s.add_development_dependency(%q<simplecov-rcov>, [">= 0"])
     else
-      s.add_dependency(%q<gator>, ["= 0.0.23.pre"])
+      s.add_dependency(%q<gator>, ["= 0.0.25.pre"])
       s.add_dependency(%q<rspec>, ["~> 2.3.0"])
       s.add_dependency(%q<ci_reporter>, ["~> 1.6.5"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
@@ -110,7 +97,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<simplecov-rcov>, [">= 0"])
     end
   else
-    s.add_dependency(%q<gator>, ["= 0.0.23.pre"])
+    s.add_dependency(%q<gator>, ["= 0.0.25.pre"])
     s.add_dependency(%q<rspec>, ["~> 2.3.0"])
     s.add_dependency(%q<ci_reporter>, ["~> 1.6.5"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
